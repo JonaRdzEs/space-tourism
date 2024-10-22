@@ -1,7 +1,19 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import { ExploreButton } from "@components/ExploreButton";
 ---
 
-<Layout title="Space tourism" description="">
-	<h1>Hello world</h1>
+<Layout title="Space tourism" description="" bgImage="background-home.jpg">
+  <div class="flex flex-col items-center justify-evenly min-h-[75vh]">
+    <h1 class="font-sans text-base text-soft-blue uppercase text-center mt-12 max-w-[25ch]">
+      So, you want to travel to
+      <span class="font-serif text-white text-7xl">space</span>
+    </h1>
+    <p class="text-soft-blue font-body text-base mt-4 text-center">
+      Let’s face it; if you want to go to space, you might as well genuinely go to
+      outer space and not hover kind of on the edge of it. Well sit back, and
+      relax because we’ll give you a truly out of this world experience!
+    </p>
+    <ExploreButton client:visible />
+  </div>
 </Layout>
