@@ -1,12 +1,14 @@
 import { useEffect, useState, type ReactNode } from "react";
 
 export interface LinkProps {
-  leftText: string;
+  className?: string;
+  activeClassName: string;
+  leftText?: string;
   text: ReactNode;
   path: string;
 }
 
-export function NavLink({ leftText, path, text }: LinkProps) {
+export function NavLink({ leftText, path, text, className = "", activeClassName = "" }: LinkProps) {
   const [isActive, setActive] = useState(false);
 
   useEffect(() => {
@@ -14,9 +16,9 @@ export function NavLink({ leftText, path, text }: LinkProps) {
   }, [path]);
 
   return (
-    <a href={path} className={`flex justify-start items-center gap-3 ${isActive ? "border-r-4" : ""}`}>
-      <span className="font-sans font-bold">{leftText}</span>
-      <span className="font-sans">{text}</span>
+    <a href={path} className={`flex justify-start items-center gap-3 ${className} ${isActive ? activeClassName : ""}`}>
+      {leftText && <span className="font-sans font-bold">{leftText}</span>}
+      <span className="font-sans uppercase">{text}</span>
     </a>
   );
 }

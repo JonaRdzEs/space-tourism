@@ -1,0 +1,34 @@
+---
+import { NavLink } from "@components/nav/NavLink";
+
+const destinationLinks = [
+  {
+    path: "/destinations/moon",
+    text: "moon",
+  },
+  {
+    path: "/destinations/mars",
+    text: "mars",
+  },
+  {
+    path: "/destinations/europa",
+    text: "europa",
+  },
+  {
+    path: "/destinations/titan",
+    text: "titan",
+  },
+];
+---
+
+<nav>
+  <ul class="flex justify-between items-center mt-6 mb-8">
+    {
+      destinationLinks.map((link) => (
+        <li>
+          <NavLink client:visible {...link} activeClassName="border-b-4" />
+        </li>
+      ))
+    }
+  </ul>
+</nav>

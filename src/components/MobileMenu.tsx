@@ -3,25 +3,25 @@ import { NavLink, type LinkProps } from "./nav/NavLink";
 import { motion } from "framer-motion";
 import { ToggleMenuButton } from "./nav/ToggleMenuButton";
 
-const links: LinkProps[] = [
+const links = [
   {
     leftText: "00",
-    text: "HOME",
+    text: "home",
     path: "/",
   },
   {
     leftText: "01",
-    text: "DESTINATION",
+    text: "destination",
     path: "/destinations/moon",
   },
   {
     leftText: "02",
-    text: "CREW",
+    text: "crew",
     path: "/3",
   },
   {
     leftText: "03",
-    text: "TECHNOLOGY",
+    text: "technology",
     path: "/4",
   },
 ];
@@ -62,7 +62,7 @@ export function MobileMenu() {
         variants={sidebar}
       >
         {links.map((link) => (
-          <NavLink key={link.path} {...link} />
+          <NavLink key={link.path} {...link} activeClassName="border-r-4" />
         ))}
       </motion.ul>
     </motion.div>

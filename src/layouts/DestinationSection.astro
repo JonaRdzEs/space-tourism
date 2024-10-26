@@ -1,0 +1,28 @@
+---
+import StatsInfo from "@components/destination/StatsInfo.astro";
+import CurrentDestination from  "@components/destination/CurrentDestination.astro";
+interface Props {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+  distance: string;
+  travel: string;
+}
+
+const { id, name, image, description, distance, travel } = Astro.props;
+---
+
+<article>
+  <img class="w-44 h-44 mx-auto mt-8 mb-6" src={image} alt={name} />
+  <CurrentDestination />
+  <h2 class="font-serif text-5xl text-center uppercase mb-2">{name}</h2>
+  <p class="font-body text-soft-blue text-center">{description}</p>
+  <hr class="text-[#383b4b] my-8" />
+  <StatsInfo title="Avg. Distance">
+    {distance}
+  </StatsInfo>
+  <StatsInfo title="Est. Travel time">
+    {travel}
+  </StatsInfo>
+</article>
