@@ -3,6 +3,8 @@ import { NavLink, type LinkProps } from "./nav/NavLink";
 import { motion } from "framer-motion";
 import { ToggleMenuButton } from "./nav/ToggleMenuButton";
 
+const validDestinations = ["moon", "mars", "europa", "titan"];
+
 const links = [
   {
     leftText: "00",
@@ -12,17 +14,17 @@ const links = [
   {
     leftText: "01",
     text: "destination",
-    path: "/destinations/moon",
+    path: "/destinations",
   },
   {
     leftText: "02",
     text: "crew",
-    path: "/3",
+    path: "/crew",
   },
   {
     leftText: "03",
     text: "technology",
-    path: "/4",
+    path: "/technology",
   },
 ];
 
@@ -44,6 +46,17 @@ const sidebar = {
 export function MobileMenu() {
   const [isOpen, setOpen] = useState<boolean>(false);
   const onToggleMenu = () => setOpen((prev) => !prev);
+  const [destinationName] = window.location.pathname.split("/").reverse();
+
+  const getPath = (path: string): string => {
+    if (path === "/") {
+      return path;
+    } else {
+      return validDestinations.includes(destinationName)
+        ? `${path}/${destinationName}`
+        : `${path}/moon`;
+    }
+  };
 
   return (
     <motion.div
@@ -62,7 +75,12 @@ export function MobileMenu() {
         variants={sidebar}
       >
         {links.map((link) => (
-          <NavLink key={link.path} {...link} activeClassName="border-r-4" />
+          <NavLink
+            key={link.path}
+            {...link}
+            path={getPath(link.path)}
+            activeClassName="border-r-4"
+          />
         ))}
       </motion.ul>
     </motion.div>

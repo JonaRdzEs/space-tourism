@@ -1,0 +1,17 @@
+---
+import { CurrentCrewMarker } from "./CurrentCrewMarker";
+
+const destinations = ["moon", "mars", "europa", "titan"];
+---
+
+<nav>
+  <ul class="flex justify-center items-center gap-4 mt-6 mb-8">
+    {
+      destinations.map((name) => (
+        <li>
+          <CurrentCrewMarker path={`/crew/${name}`} ariaLabel={`Go to ${name} crew`} client:visible />
+        </li>
+      ))
+    }
+  </ul>
+</nav>

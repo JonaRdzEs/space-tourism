@@ -1,9 +1,14 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import { ExploreButton } from "@components/ExploreButton";
+const bgImage = ""
 ---
 
-<Layout title="Space tourism" description="" bgImage="background-home.jpg">
+<Layout 
+  title="Space tourism" 
+  description="Space tourims home page" 
+  className={`bg-[url('/backgrounds/home-mobile.jpg')] lg:bg-[url('/backgrounds/home-desktop.jpg')] bg-no-repeat bg-cover`}
+>
   <div class="flex flex-col items-center justify-evenly min-h-[75vh]">
     <h1 class="font-sans text-base text-soft-blue uppercase text-center mt-12 max-w-[25ch]">
       So, you want to travel to

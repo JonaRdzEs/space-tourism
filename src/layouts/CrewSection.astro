@@ -1,0 +1,32 @@
+---
+import Layout from "@layouts/Layout.astro";
+import SectionTitle from "@components/SectionTitle.astro";
+import CurrentCrew from "@components/crew/CurrentCrew.astro";
+import data from "../data/data.json";
+
+interface Props {
+  destinationId: string;
+}
+
+const { destinationId } = Astro.props;
+const crewInfo = data.crew.find((crew) => crew.destinationId === destinationId)!;
+const { images, name, role, bio } = crewInfo;
+---
+
+<Layout
+  title={name}
+  description=""
+  className="bg-[url('/backgrounds/crew-mobile.jpg')] lg:bg-[url('/backgrounds/crew-desktop.jpg')] bg-no-repeat bg-cover"
+>
+  <SectionTitle leftText="02"> Meet your crew </SectionTitle>
+  <article>
+    <img class="w-1/2 h-auto mx-auto mt-8 mb-0" src={images.webp} alt={name} />
+    <hr class="text-[#383b4b] mb-8" />
+    <CurrentCrew />
+    <h2 class="text-center flex justify-center items-center gap-2 flex-col">
+      <span class="font-serif font-base opacity-50 uppercase">{role}</span>
+      <span class="font-serif text-2xl uppercase">{name}</span>
+    </h2>
+    <p class="font-body text-base text-soft-blue text-center mt-4">{bio}</p>
+  </article>
+</Layout>

@@ -1,0 +1,22 @@
+---
+import { CurrentTechMarker } from "./CurrentTechMarker";
+
+const destinations = ["moon", "mars", "europa"];
+---
+
+<nav>
+  <ul class="flex justify-center items-center gap-4 mt-6 mb-8">
+    {
+      destinations.map((name, index) => (
+        <li>
+          <CurrentTechMarker
+            path={`/technology/${name}`}
+            ariaLabel={`Go to ${name} technology`}
+            text={(index + 1).toString()}
+            client:visible
+          />
+        </li>
+      ))
+    }
+  </ul>
+</nav>
