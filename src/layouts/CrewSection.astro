@@ -16,17 +16,20 @@ const { images, name, role, bio } = crewInfo;
 <Layout
   title={name}
   description=""
-  className="bg-[url('/backgrounds/crew-mobile.jpg')] lg:bg-[url('/backgrounds/crew-desktop.jpg')] bg-no-repeat bg-cover"
+  className="bg-[url('/backgrounds/crew-mobile.jpg')] lg:bg-[url('/backgrounds/crew-desktop.jpg')]"
 >
   <SectionTitle leftText="02"> Meet your crew </SectionTitle>
-  <article>
-    <img class="w-1/2 h-auto mx-auto mt-8 mb-0" src={images.webp} alt={name} />
-    <hr class="text-[#383b4b] mb-8" />
+  <article class="flex flex-col justify-center items-center md:flex-col-reverse">
+    <img class="w-1/2 h-auto mx-auto mt-8 mb-0 md:max-w-[470px] md:mx-auto" src={images.webp} alt={name} />
+    <hr class="text-[#383b4b] mb-8 md:hidden" />
     <CurrentCrew />
-    <h2 class="text-center flex justify-center items-center gap-2 flex-col">
-      <span class="font-serif font-base opacity-50 uppercase">{role}</span>
-      <span class="font-serif text-2xl uppercase">{name}</span>
-    </h2>
-    <p class="font-body text-base text-soft-blue text-center mt-4">{bio}</p>
+    <div class="flex justify-center items-center flex-col md:mt-16 md:mb-10 md:w-8/12 md:mx-auto">
+      <h2 class="text-center flex justify-center items-center gap-2 flex-col md:text-2xl">
+        <span class="font-serif font-base opacity-50 uppercase">{role}</span>
+        <br />
+        <span class="font-serif text-2xl uppercase md:text-[40px]">{name}</span>
+      </h2>
+      <p class="font-body text-base text-soft-blue text-center mt-4">{bio}</p>
+    </div>
   </article>
 </Layout>

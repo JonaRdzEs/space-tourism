@@ -5,28 +5,14 @@ import { ToggleMenuButton } from "./nav/ToggleMenuButton";
 
 const validDestinations = ["moon", "mars", "europa", "titan"];
 
-const links = [
-  {
-    leftText: "00",
-    text: "home",
-    path: "/",
-  },
-  {
-    leftText: "01",
-    text: "destination",
-    path: "/destinations",
-  },
-  {
-    leftText: "02",
-    text: "crew",
-    path: "/crew",
-  },
-  {
-    leftText: "03",
-    text: "technology",
-    path: "/technology",
-  },
-];
+interface Links {
+  text: string,
+  path: string,
+}
+
+interface Props {
+  links: Links[]
+}
 
 const sidebar = {
   open: {
@@ -43,7 +29,7 @@ const sidebar = {
   },
 };
 
-export function MobileMenu() {
+export function MobileMenu({ links }: Props) {
   const [isOpen, setOpen] = useState<boolean>(false);
   const onToggleMenu = () => setOpen((prev) => !prev);
   const [destinationName] = window.location.pathname.split("/").reverse();
@@ -74,13 +60,15 @@ export function MobileMenu() {
         className="fixed top-0 right-0 bottom-0 w-full z-10 max-w-64 pt-28 pl-8 backdrop-blur-xl flex flex-col gap-8"
         variants={sidebar}
       >
-        {links.map((link) => (
-          <NavLink
-            key={link.path}
-            {...link}
-            path={getPath(link.path)}
-            activeClassName="border-r-4"
-          />
+        {links.map((link, index) => (
+          <li key={link.path}>
+            <NavLink
+              {...link}
+              path={getPath(link.path)}
+              leftText={`0${index}`}
+              activeClassName="border-r-4"
+            />
+          </li>
         ))}
       </motion.ul>
     </motion.div>

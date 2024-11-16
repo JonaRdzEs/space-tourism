@@ -14,6 +14,9 @@ export default {
 				"sans": ["Barlow Condensed", ...defaultTheme.fontFamily.sans],
 				"serif": ["Bellefair", ...defaultTheme.fontFamily.serif],
 				"body": ["Barlow"],
+			},
+			screens: {
+				"xl": "1440px",
 			}
 		}
 	},

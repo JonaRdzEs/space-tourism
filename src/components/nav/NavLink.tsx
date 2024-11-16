@@ -19,7 +19,6 @@ export function NavLink({ leftText, path, text, className = "", activeClassName 
     }
   }, [path]);
 
-
   return isVisible && (
     <a href={path} className={`flex justify-start items-center gap-3 ${className} ${isActive ? activeClassName : ""}`}>
       {leftText && <span className="font-sans font-bold">{leftText}</span>}

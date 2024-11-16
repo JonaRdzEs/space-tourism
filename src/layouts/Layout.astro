@@ -20,7 +20,7 @@ const { title, description, className = "" } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<div class={`p-6 min-h-screen ${className}`}>
+		<div class={`p-6 min-h-screen md:pr-0 ${className} bg-no-repeat bg-cover`}>
 			<Header />
 			<main>
 				<slot />

@@ -1,21 +1,35 @@
 ---
 import { MobileMenu } from "./MobileMenu.tsx";
+import { DesktopMenu } from "./DesktopMenu";
+
+interface Links {
+  leftText?: string,
+  text: string,
+  path: string,
+}
+
+
+const links: Links[] = [
+  {
+    text: "home",
+    path: "/",
+  },
+  {
+    text: "destination",
+    path: "/destinations",
+  },
+  {
+    text: "crew",
+    path: "/crew",
+  },
+  {
+    text: "technology",
+    path: "/technology",
+  },
+];
 ---
 
 <nav>
-  <ul class="hidden md:flex md:grow md:border-2">
-    <li>
-      <a><span>00</span> HOME</a>
-    </li>
-    <li>
-      <a><span>00</span> DESTINATION</a>
-    </li>
-    <li>
-      <a><span>00</span> CREW</a>
-    </li>
-    <li>
-      <a><span>00</span> TECHNOLOGY</a>
-    </li>
-  </ul>
-  <MobileMenu client:visible client:only="react" />
+  <DesktopMenu client:visible client:only="react" links={links} />
+  <MobileMenu  client:visible client:only="react" links={links} />
 </nav>

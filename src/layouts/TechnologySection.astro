@@ -19,23 +19,24 @@ const { images, name, description } = techInfo;
 <Layout
   title={name}
   description=""
-  className="bg-[url('/backgrounds/technology-mobile.jpg')] lg:bg-[url('/backgrounds/technology-desktop.jpg')] bg-no-repeat bg-cover"
+  className="bg-[url('/backgrounds/technology-mobile.jpg')] lg:bg-[url('/backgrounds/technology-desktop.jpg')]"
 >
   <SectionTitle leftText="03"> Space launch 101 </SectionTitle>
   <article>
     <img
-      class="w-full h-auto mx-auto mt-8 mb-6"
+      class="w-full h-auto mx-auto mt-8 mb-6 md:mt-16 md:mb-14"
       src={images.landscape}
       alt={name}
     />
     <CurrentTech />
     <h2 class="text-center flex justify-center items-center gap-2 flex-col">
-      <span class="font-sans font-base opacity-50 uppercase"
-        >The terminology...</span
-      >
-      <span class="font-serif text-2xl uppercase">{name}</span>
+      <span class="font-sans text-base opacity-50 uppercase text-soft-blue">
+        The terminology...
+      </span>
+      <br />
+      <span class="font-serif text-2xl uppercase md:text-[40px]">{name}</span>
     </h2>
-    <p class="font-body text-base text-soft-blue text-center mt-4">
+    <p class="font-body text-base text-soft-blue text-center mt-4 sm:w-8/12 sm:mx-auto">
       {description}
     </p>
   </article>

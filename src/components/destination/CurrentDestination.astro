@@ -22,11 +22,11 @@ const destinationLinks = [
 ---
 
 <nav>
-  <ul class="flex justify-between items-center mt-6 mb-8">
+  <ul class="flex justify-between items-center mt-6 mb-8 md:w-6/12 md:mx-auto xl:w-full">
     {
       destinationLinks.map((link) => (
         <li>
-          <NavLink client:visible {...link} activeClassName="border-b-4" />
+          <NavLink client:visible client:only="react" {...link} activeClassName="border-b-4" />
         </li>
       ))
     }
