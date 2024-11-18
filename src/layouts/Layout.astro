@@ -20,9 +20,9 @@ const { title, description, className = "" } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<div class={`p-6 min-h-screen md:pr-0 ${className} bg-no-repeat bg-cover`}>
+		<div class={`p-6 w-full min-h-screen md:pr-0 ${className} bg-no-repeat bg-cover`}>
 			<Header />
-			<main>
+			<main class="w-10/12 max-w-7xl mx-auto sm:w-8/12 xl:w-10/12">
 				<slot />
 			</main>
 		</div>

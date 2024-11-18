@@ -24,7 +24,7 @@ export function DesktopMenu({ links }: Props) {
     }
   };
   return (
-    <ul className="hidden md:flex md:items-stretch md:gap-9 md:grow md:w-[450px] h-24 md:backdrop-blur-xl md:py-10 md:px-12 xl:w-[830px] xl:max-w-[830px]">
+    <ul className="hidden md:flex md:items-stretch md:gap-9 md:grow h-24 md:backdrop-blur-xl md:py-10 md:px-12 xl:max-w-[830px]">
     {links.map((link, index) => (
       <li className="h-full" key={link.path}>
         <NavLink    

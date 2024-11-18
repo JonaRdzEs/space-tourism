@@ -21,14 +21,14 @@ const { id, name, image, description, distance, travel } = Astro.props;
   className="bg-[url('/backgrounds/destination-mobile.jpg')] lg:bg-[url('/backgrounds/destination-desktop.jpg')]"
 >
   <SectionTitle leftText="01"> Pick your destination </SectionTitle>
-  <article class="sm:w-8/12 sm:mx-auto xl:flex xl:justify-center xl:items-center xl:gap-[157px] xl:mt-16">
+  <article class="xl:flex xl:justify-start xl:items-center xl:gap-[157px] xl:mt-16">
     <img class="w-44 h-44 mx-auto mt-8 mb-6 md:w-[300px] md:h-[300px] md:mt-16 md:mb-14 xl:w-[445px] xl:h-[445px]" src={image} alt={name} />
     <div class="">
       <CurrentDestination />
       <h2 class="font-serif text-5xl text-center uppercase mb-2 md:text-[80px] xl:text-[100px] xl:text-left">{name}</h2>
       <p class="font-body text-soft-blue text-center xl:text-lg xl:text-left">{description}</p>
       <hr class="text-[#383b4b] my-8 md:my-12" />
-      <div class="md:flex md:justify-around md:items-center">
+      <div class="md:flex md:justify-around md:items-center xl:justify-start xl:gap-20">
         <StatsInfo title="Avg. Distance">
           {distance}
         </StatsInfo>

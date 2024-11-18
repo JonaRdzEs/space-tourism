@@ -15,7 +15,7 @@ export function CurrentCrewMarker({ path, ariaLabel }: Props) {
   return (
     <a 
       href={path} 
-      className={`block w-[10px] h-[10px] bg-white rounded-full hover:bg-opacity-50 ${isActive ? "bg-opacity-100" : "bg-opacity-[0.17]"}`} 
+      className={`block w-[10px] h-[10px] bg-white rounded-full hover:bg-opacity-50 xl:w-4 xl:h-4 ${isActive ? "bg-opacity-100" : "bg-opacity-[0.17]"}`} 
       aria-label={ariaLabel} 
     />
   );

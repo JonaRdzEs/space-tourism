@@ -22,22 +22,24 @@ const { images, name, description } = techInfo;
   className="bg-[url('/backgrounds/technology-mobile.jpg')] lg:bg-[url('/backgrounds/technology-desktop.jpg')]"
 >
   <SectionTitle leftText="03"> Space launch 101 </SectionTitle>
-  <article>
+  <article class="xl:flex xl:justify-around xl:items-center xl:mt-7 xl:gap-20">
     <img
-      class="w-full h-auto mx-auto mt-8 mb-6 md:mt-16 md:mb-14"
-      src={images.landscape}
+      class="w-full h-auto mx-auto mt-8 mb-6 md:mt-16 md:mb-14 xl:order-3 xl:w-[515px] xl:mt-0 xl:self-baseline"
+      src={images.portrait}
       alt={name}
     />
     <CurrentTech />
-    <h2 class="text-center flex justify-center items-center gap-2 flex-col">
-      <span class="font-sans text-base opacity-50 uppercase text-soft-blue">
-        The terminology...
-      </span>
-      <br />
-      <span class="font-serif text-2xl uppercase md:text-[40px]">{name}</span>
-    </h2>
-    <p class="font-body text-base text-soft-blue text-center mt-4 sm:w-8/12 sm:mx-auto">
-      {description}
-    </p>
+    <div class="xl:order-2 ">
+      <h2 class="text-center flex-col xl:text-left">
+        <span class="font-sans text-base uppercase text-soft-blue">
+          The terminology...
+        </span>
+        <br />
+        <span class="block font-serif text-2xl uppercase md:text-[40px] xl:text-[56px] xl:mt-3 xl:mb-4">{name}</span>
+      </h2>
+      <p class="font-body text-base text-soft-blue text-center mt-4 sm:w-8/12 sm:mx-auto xl:text-left xl:w-11/12 xl:ml-0 xl:text-lg">
+        {description}
+      </p>
+    </div>
   </article>
 </Layout>
