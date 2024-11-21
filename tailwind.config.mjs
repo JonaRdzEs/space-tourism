@@ -5,6 +5,7 @@ export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		colors: {
+			"transparent": "transparent",
 			"space-navy": "#0B0D17",
 			"soft-blue": "#D0D6F9",
 			"white": "#FFFFFF",

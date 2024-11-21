@@ -31,8 +31,8 @@ export function DesktopMenu({ links }: Props) {
           {...link}
           path={getPath(link.path)}
           leftText={`0${index}`}
-          className="flex items-center h-full"
-          activeClassName="border-b-4"
+          className="flex items-center h-full w-full relative after:content-[''] after:absolute after:-bottom-9 after:left-0 after:w-full after:h-[3px] after:bg-transparent hover:after:bg-white hover:after:bg-opacity-50 transition-all"
+          activeClassName="after:bg-white"
         />
       </li>
     ))}

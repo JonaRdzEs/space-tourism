@@ -2,6 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import SectionTitle from "@components/SectionTitle.astro";
 import CurrentTech from "@components/technology/CurrentTech.astro";
+import { TechImage } from "@components/technology/TechImage";
 import data from "../data/data.json";
 
 interface Props {
@@ -23,19 +24,15 @@ const { images, name, description } = techInfo;
 >
   <SectionTitle leftText="03"> Space launch 101 </SectionTitle>
   <article class="xl:flex xl:justify-around xl:items-center xl:mt-7 xl:gap-20">
-    <img
-      class="w-full h-auto mx-auto mt-8 mb-6 md:mt-16 md:mb-14 xl:order-3 xl:w-[515px] xl:mt-0 xl:self-baseline"
-      src={images.portrait}
-      alt={name}
-    />
+    <TechImage images={images} name={name} client:visible client:only="react" />
     <CurrentTech />
     <div class="xl:order-2 ">
       <h2 class="text-center flex-col xl:text-left">
-        <span class="font-sans text-base uppercase text-soft-blue">
+        <span class="inline-block font-sans text-base uppercase text-soft-blue tracking-widest mb-1 md:mb-2">
           The terminology...
         </span>
         <br />
-        <span class="block font-serif text-2xl uppercase md:text-[40px] xl:text-[56px] xl:mt-3 xl:mb-4">{name}</span>
+        <span class="block font-serif text-2xl uppercase md:text-[40px] xl:text-[56px] xl:leading-none xl:mt-3 xl:mb-4">{name}</span>
       </h2>
       <p class="font-body text-base text-soft-blue text-center mt-4 sm:w-8/12 sm:mx-auto xl:text-left xl:w-11/12 xl:ml-0 xl:text-lg">
         {description}

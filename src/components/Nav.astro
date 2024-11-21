@@ -29,7 +29,7 @@ const links: Links[] = [
 ];
 ---
 
-<nav>
+<nav aria-label="main navigation">
   <DesktopMenu client:visible client:only="react" links={links} />
   <MobileMenu  client:visible client:only="react" links={links} />
 </nav>

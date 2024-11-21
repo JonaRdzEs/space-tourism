@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink, type LinkProps } from "./nav/NavLink";
+import { NavLink } from "./nav/NavLink";
 import { motion } from "framer-motion";
 import { ToggleMenuButton } from "./nav/ToggleMenuButton";
 
@@ -16,16 +16,10 @@ interface Props {
 
 const sidebar = {
   open: {
-    clipPath: "circle(141.2% at 100% 0)",
-    transition: {
-      type: "spring",
-    },
+    clipPath: "inset(0% 0% 0% 0%)",
   },
   closed: {
-    clipPath: "circle(0% at 100% 0)",
-    transition: {
-      type: "spring",
-    },
+    clipPath: "inset(0% 0% 0% 100%)",
   },
 };
 
@@ -47,12 +41,11 @@ export function MobileMenu({ links }: Props) {
   return (
     <motion.div
       className="relative md:hidden"
-      initial={false}
+      initial="closed"
       animate={isOpen ? "open" : "closed"}
     >
       <ToggleMenuButton
         onClick={onToggleMenu}
-        aria-hidden={isOpen}
         aria-controls="mobile-menu"
       />
       <motion.ul
@@ -66,6 +59,7 @@ export function MobileMenu({ links }: Props) {
               {...link}
               path={getPath(link.path)}
               leftText={`0${index}`}
+              className="h-8 hover:border-r-4 hover:border-white hover:border-opacity-50 transition-all"
               activeClassName="border-r-4"
             />
           </li>

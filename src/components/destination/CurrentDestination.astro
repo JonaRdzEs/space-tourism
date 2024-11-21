@@ -21,12 +21,17 @@ const destinationLinks = [
 ];
 ---
 
-<nav class="xl:max-w-[290px]">
+<nav class="xl:max-w-[290px]" aria-label="destination tab navigation">
   <ul class="flex justify-between items-center mt-6 mb-8 md:w-6/12 md:mx-auto xl:w-full">
     {
       destinationLinks.map((link) => (
         <li>
-          <NavLink client:visible client:only="react" {...link} activeClassName="border-b-4" />
+          <NavLink
+            {...link} 
+            client:visible 
+            client:only="react"
+            className="pb-3 border-b-[3px] border-b-transparent text-soft-blue hover:border-white hover:border-opacity-50 transition-colors"
+            activeClassName="text-white border-b-[3px] border-b-white" />
         </li>
       ))
     }
