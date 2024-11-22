@@ -10,13 +10,13 @@ interface Props {
 
 const { destinationId } = Astro.props;
 const crewInfo = data.crew.find((crew) => crew.destinationId === destinationId)!;
-const { images, name, role, bio } = crewInfo;
+const { images, name, role, bio, page_desc } = crewInfo;
 ---
 
 <Layout
   title={name}
-  description=""
-  className="bg-[url('/backgrounds/crew-mobile.jpg')] lg:bg-[url('/backgrounds/crew-desktop.jpg')]"
+  description={page_desc}
+  className="bg-[url('/space-tourism/backgrounds/crew-mobile.jpg')] lg:bg-[url('/space-tourism/backgrounds/crew-desktop.jpg')]"
 >
   <SectionTitle leftText="02"> Meet your crew </SectionTitle>
   <article class="flex flex-col justify-center items-center md:flex-col-reverse xl:flex-row-reverse xl:justify-around xl:w-full xl:mx-auto">

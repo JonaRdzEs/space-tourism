@@ -10,7 +10,7 @@ const destinations = ["moon", "mars", "europa"];
       destinations.map((name, index) => (
         <li>
           <CurrentTechMarker
-            path={`/technology/${name}`}
+            path={`${import.meta.env.BASE_URL}/technology/${name}`}
             ariaLabel={`Go to ${name} technology`}
             text={(index + 1).toString()}
             client:visible

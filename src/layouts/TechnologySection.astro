@@ -14,13 +14,13 @@ const techInfo = data.technology.find(
   (tech) => tech.destinationId === destinationId
 )!;
 
-const { images, name, description } = techInfo;
+const { images, name, description, page_desc } = techInfo;
 ---
 
 <Layout
   title={name}
-  description=""
-  className="bg-[url('/backgrounds/technology-mobile.jpg')] lg:bg-[url('/backgrounds/technology-desktop.jpg')]"
+  description={page_desc}
+  className="bg-[url('/space-tourism/backgrounds/technology-mobile.jpg')] lg:bg-[url('/space-tourism/backgrounds/technology-desktop.jpg')]"
 >
   <SectionTitle leftText="03"> Space launch 101 </SectionTitle>
   <article class="xl:flex xl:justify-around xl:items-center xl:mt-7 xl:gap-20">

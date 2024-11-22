@@ -29,7 +29,7 @@ export function MobileMenu({ links }: Props) {
   const [destinationName] = window.location.pathname.split("/").reverse();
 
   const getPath = (path: string): string => {
-    if (path === "/") {
+    if (path === `${import.meta.env.BASE_URL}`) {
       return path;
     } else {
       return validDestinations.includes(destinationName)

@@ -14,7 +14,7 @@ export function NavLink({ leftText, path, text, className = "", activeClassName 
 
   useEffect(() => {
     window.location.pathname === path ? setActive(true) : setActive(false);
-    if(path === "/technology/titan") {
+    if(path === `${import.meta.env.BASE_URL}/technology/titan`) {
       setVisible(false)
     }
   }, [path]);

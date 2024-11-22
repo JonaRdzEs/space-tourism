@@ -9,7 +9,7 @@ const destinations = ["moon", "mars", "europa", "titan"];
     {
       destinations.map((name) => (
         <li>
-          <CurrentCrewMarker path={`/crew/${name}`} ariaLabel={`Go to ${name} crew`} client:visible />
+          <CurrentCrewMarker path={`${import.meta.env.BASE_URL}/crew/${name}`} ariaLabel={`Go to ${name} crew`} client:visible />
         </li>
       ))
     }

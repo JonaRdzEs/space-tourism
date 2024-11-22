@@ -10,15 +10,17 @@ interface Props {
   description: string;
   distance: string;
   travel: string;
+  page_desc: string,
 }
 
-const { id, name, image, description, distance, travel } = Astro.props;
+const { name, image, description, distance, travel, page_desc } = Astro.props;
+
 ---
 
 <Layout
   title={name}
-  description=""
-  className="bg-[url('/backgrounds/destination-mobile.jpg')] lg:bg-[url('/backgrounds/destination-desktop.jpg')]"
+  description={page_desc}
+  className={`bg-[url('/space-tourism/backgrounds/destination-mobile.jpg')] lg:bg-[url('/space-tourism/backgrounds/destination-desktop.jpg')]`}
 >
   <SectionTitle leftText="01"> Pick your destination </SectionTitle>
   <article class="xl:flex xl:justify-start xl:items-center xl:gap-[157px] xl:mt-16">

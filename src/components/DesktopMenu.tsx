@@ -15,7 +15,7 @@ export function DesktopMenu({ links }: Props) {
   const [destinationName] = window.location.pathname.split("/").reverse();
 
   const getPath = (path: string): string => {
-    if (path === "/") {
+    if (path === `${import.meta.env.BASE_URL}`) {
       return path;
     } else {
       return validDestinations.includes(destinationName)
@@ -23,6 +23,7 @@ export function DesktopMenu({ links }: Props) {
         : `${path}/moon`;
     }
   };
+
   return (
     <ul className="hidden md:flex md:items-stretch md:gap-9 md:grow h-24 md:backdrop-blur-xl md:py-10 md:px-12 xl:max-w-[830px]">
     {links.map((link, index) => (

@@ -3,8 +3,8 @@ import Nav from "./Nav.astro";
 ---
 
 <header class="flex justify-between items-center">
-  <a href="/" aria-label="home page" class="block w-10 h-10">
-    <img src="/logo.svg" alt="space tourism logo" />
+  <a href={`${import.meta.env.BASE_URL}`} aria-label="home page" class="block w-10 h-10">
+    <img src={`${import.meta.env.BASE_URL}/logo.svg`} alt="space tourism logo" />
   </a>
   <Nav />
 </header>
