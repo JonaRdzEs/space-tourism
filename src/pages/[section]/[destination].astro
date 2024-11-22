@@ -17,10 +17,12 @@ export const getStaticPaths = (() => {
   let staticParams: ParamsPath[] = [];
   sections.forEach((name) => {
     data.destinations.forEach((destination) => {
-      staticParams.push({params: {
-      section: name,
-      destination: destination.name.toLowerCase() 
-      }})
+      if(destination.name !== "titan" && name !== "technology") {
+        staticParams.push({params: {
+        section: name,
+        destination: destination.name.toLowerCase() 
+        }})
+      }
     })
   })
   return staticParams;
