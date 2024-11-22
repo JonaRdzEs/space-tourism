@@ -1,0 +1,35 @@
+---
+import { MobileMenu } from "./MobileMenu.tsx";
+import { DesktopMenu } from "./DesktopMenu";
+
+interface Links {
+  leftText?: string,
+  text: string,
+  path: string,
+}
+
+
+const links: Links[] = [
+  {
+    text: "home",
+    path: `${import.meta.env.BASE_URL}`,
+  },
+  {
+    text: "destination",
+    path: `${import.meta.env.BASE_URL}/destinations`,
+  },
+  {
+    text: "crew",
+    path: `${import.meta.env.BASE_URL}/crew`,
+  },
+  {
+    text: "technology",
+    path: `${import.meta.env.BASE_URL}/technology`,
+  },
+];
+---
+
+<nav aria-label="main navigation">
+  <DesktopMenu client:visible client:only="react" links={links} />
+  <MobileMenu  client:visible client:only="react" links={links} />
+</nav>

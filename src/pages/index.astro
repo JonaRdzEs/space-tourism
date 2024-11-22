@@ -1,7 +1,25 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import { ExploreButton } from "@components/ExploreButton";
 ---
 
-<Layout title="Space tourism" description="">
-	<h1>Hello world</h1>
+<Layout 
+  title="Space tourism" 
+  description="Explore space tourism destinations like the Moon, Mars, Europa, and Titan. Discover exciting details about each celestial body and plan your interstellar journey today!"
+  className={`bg-[url('/space-tourism/backgrounds/home-mobile.jpg')] lg:bg-[url('space-tourism/backgrounds/home-desktop.jpg')]`}
+>
+  <div class="flex flex-col items-center justify-center min-h-[75vh] md:mt-24 md:min-h-none xl:flex-row xl:justify-around xl:gap-[391px]">
+    <div class="flex justify-center items-center flex-col xl:justify-start xl:max-w-[470px]">
+      <h1 class="font-sans text-base text-soft-blue uppercase text-center mt-12 max-w-[25ch] tracking-wider md:mt-0 md:text-xl md:max-w-none xl:text-[28px] xl:text-left">
+        So, you want to travel to <br/>
+        <span class="block font-serif text-white text-7xl md:text-[150px] xl:my-6">space</span>
+      </h1>
+      <p class="text-soft-blue font-body text-base mt-4 text-center md:w-8/12 xl:text-lg xl:text-left xl:w-11/12">
+        Let’s face it; if you want to go to space, you might as well genuinely go to
+        outer space and not hover kind of on the edge of it. Well sit back, and
+        relax because we’ll give you a truly out of this world experience!
+      </p>
+    </div>
+    <ExploreButton client:visible />
+  </div>
 </Layout>

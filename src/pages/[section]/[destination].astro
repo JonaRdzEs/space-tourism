@@ -1,0 +1,37 @@
+---
+import type { GetStaticPaths } from "astro";
+import DestinationSection from "@layouts/DestinationSection.astro";
+import CrewSection from "@layouts/CrewSection.astro";
+import TechnologySection from "@layouts/TechnologySection.astro";
+import data from "../../data/data.json";
+
+interface ParamsPath {
+  params: {
+    section: string,
+    destination: string,
+  }
+}
+
+export const getStaticPaths = (() => {
+  const sections = Object.keys(data);
+  let staticParams: ParamsPath[] = [];
+  sections.forEach((name) => {
+    data.destinations.forEach((destination) => {
+      staticParams.push({params: {
+      section: name,
+      destination: destination.name.toLowerCase() 
+      }})
+    })
+  })
+  return staticParams;
+}) satisfies GetStaticPaths;
+
+const { destination, section } = Astro.params;
+const destinationInfo = data.destinations.find((dest) => dest.name.toLowerCase() === destination)!;
+
+---
+<>
+  { section === "destinations" && <DestinationSection {...destinationInfo} image={destinationInfo.images.webp} />}
+  { section === "crew" && <CrewSection destinationId={destinationInfo.id} />} 
+  { section === "technology" && <TechnologySection destinationId={destinationInfo.id} />} 
+</>
