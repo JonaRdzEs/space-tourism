@@ -17,14 +17,16 @@ export const getStaticPaths = (() => {
   let staticParams: ParamsPath[] = [];
   sections.forEach((name) => {
     data.destinations.forEach((destination) => {
-      if(destination.name !== "titan" && name !== "technology") {
-        staticParams.push({params: {
+      staticParams.push({
+        params: {
         section: name,
         destination: destination.name.toLowerCase() 
-        }})
-      }
-    })
-  })
+        }
+      })
+    });
+  });
+  const unavailableRouteIndex = staticParams.findIndex((item) => item.params.section === "technology" && item.params.destination === "titan");
+  staticParams.splice(unavailableRouteIndex, 1)
   return staticParams;
 }) satisfies GetStaticPaths;
 
