@@ -10,7 +10,7 @@ export function CurrentTechMarker({ path, ariaLabel, text }: Props) {
   const [isActive, setActive] = useState(false);
 
   useEffect(() => {
-    window.location.pathname === `${path}/` ? setActive(true) : setActive(false);
+    window.location.pathname.match(path) ? setActive(true) : setActive(false);
   }, [path]);
 
   return (
