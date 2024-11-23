@@ -19,8 +19,8 @@ export function DesktopMenu({ links }: Props) {
       return path;
     } else {
       return validDestinations.includes(destinationName)
-        ? `${path}/${destinationName}/`
-        : `${path}/moon/`;
+        ? `${path}/${destinationName}`
+        : `${path}/moon`;
     }
   };
 

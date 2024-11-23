@@ -9,7 +9,7 @@ export function CurrentCrewMarker({ path, ariaLabel }: Props) {
   const [isActive, setActive] = useState(false);
 
   useEffect(() => {
-    window.location.pathname === path ? setActive(true) : setActive(false);
+    window.location.pathname === `${path}` ? setActive(true) : setActive(false);
   }, [path]);
 
   return (
