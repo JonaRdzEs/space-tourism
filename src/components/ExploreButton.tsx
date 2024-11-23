@@ -23,7 +23,7 @@ export function ExploreButton() {
         animate={isHovering ? "hover" : "not-hover"}
       />
       <a
-        href={`${import.meta.env.BASE_URL}/destinations/moon`}
+        href={`${import.meta.env.BASE_URL}/destinations/moon/`}
         className="font-serif text-xl flex justify-center items-center bg-white text-space-navy rounded-full absolute  w-full h-full md:text-[32px]"
         onMouseEnter={() => setHovering(true)}
         onMouseLeave={() => setHovering(false)}
