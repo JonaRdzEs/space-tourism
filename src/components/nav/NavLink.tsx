@@ -13,7 +13,7 @@ export function NavLink({ leftText, path, text, className = "", activeClassName 
   const [isVisible, setVisible] = useState(true);
 
   useEffect(() => {
-    window.location.pathname.match(path) ? setActive(true) : setActive(false);
+    window.location.pathname === `${path}/` ? setActive(true) : setActive(false);
     if(path === `${import.meta.env.BASE_URL}/technology/titan`) {
       setVisible(false)
     }
