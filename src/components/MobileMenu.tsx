@@ -26,7 +26,7 @@ const sidebar = {
 export function MobileMenu({ links }: Props) {
   const [isOpen, setOpen] = useState<boolean>(false);
   const onToggleMenu = () => setOpen((prev) => !prev);
-  const [destinationName] = window.location.pathname.split("/").reverse();
+  const [destinationName] = window.location.pathname.split("/").filter(value => value !== "").reverse();
 
   const getPath = (path: string): string => {
     if (path === `${import.meta.env.BASE_URL}`) {
