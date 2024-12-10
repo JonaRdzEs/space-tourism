@@ -12,7 +12,7 @@ interface Props {
 const validDestinations = ["moon", "mars", "europa", "titan"];
 
 export function DesktopMenu({ links }: Props) {
-  const [destinationName] = window.location.pathname.split("/").reverse();
+  const [destinationName] = window.location.pathname.split("/").filter(value => value !== "").reverse();
 
   const getPath = (path: string): string => {
     if (path === `${import.meta.env.BASE_URL}`) {
